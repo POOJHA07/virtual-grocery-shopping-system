@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="loginPage" class="login">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="catalogPage" class="catalog" style="display:none;">
+        <h2>Product Catalog</h2>
+        <div class="product-grid" id="productGrid"></div>
+        <button onclick="viewCart()">View My Cart</button>
+    </div>
+
+    <div id="cartPage" class="cart" style="display:none;">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <p><strong>Original Total: ₹<span id="totalAmount"></span></strong></p>
+        <p><strong>Discounted Total: ₹<span id="discountedTotal"></span></strong></p>
+        <button onclick="proceedToPayment()">Proceed to Payment</button>
+        <button onclick="backToCatalog()">Back to Catalog</button>
+    </div>
+
+    <div id="paymentPage" class="payment" style="display:none;">
+        <h2>Select Payment Method</h2>
+        <button onclick="selectPayment('Credit Card')">Credit Card</button>
+        <button onclick="selectPayment('UPI')">UPI</button>
+        <button onclick="selectPayment('Others')">Others</button>
+        <div id="paymentConfirmation" style="margin-top:20px; display:none;">
+            <p>You selected: <span id="paymentMethod"></span></p>
+            <p>Total Amount: ₹<span id="finalAmount"></span></p>
+            <button onclick="payNow()">Pay Now</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
